@@ -15,7 +15,6 @@ export const Button: FC<ButtonProps> = (props) => {
         className, children, theme, ...otherProps
     } = props;
     return (
-        // eslint-disable-next-line react/jsx-props-no-spreading
         <button type="button" className={classNames(styles.Button, {}, [className, styles[theme]])} {...otherProps}>
             {children}
         </button>

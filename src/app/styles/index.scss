@@ -1,7 +1,7 @@
-@import url('reset');
-@import url('variables/global');
-@import url('themes/dark');
-@import url('themes/light');
+@import "reset";
+@import "variables/global";
+@import "themes/dark";
+@import "themes/light";
 
 .app {
     font: var(--font-m);

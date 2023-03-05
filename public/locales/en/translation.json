@@ -2,5 +2,12 @@
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
   "Главная страница": "Main page",
-  "Язык": "English"
+  "Страница не найдена": "Page not found",
+  "Язык": "English",
+  "О сайте": "About",
+  "Открыть": "Open",
+  "Главная": "Home",
+  "Произошла непредвиденная ошибка": "Something go wrong",
+  "Обновить страницу": "Reload page",
+  "Создать ошибку": "Throw error"
 }
