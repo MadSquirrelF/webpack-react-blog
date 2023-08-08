@@ -4,7 +4,7 @@ import '../../../app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
-import { Button, ThemeButton } from './Button';
+import { Button, SizeButton, ThemeButton } from './Button';
 
 export default {
     title: 'shared/Button',
@@ -34,6 +34,27 @@ export const Outline = Template.bind({});
 Outline.args = {
     children: 'Text',
     theme: ThemeButton.OUTLINE,
+};
+
+export const OutlineSizeL = Template.bind({});
+OutlineSizeL.args = {
+    children: 'Text',
+    theme: ThemeButton.OUTLINE,
+    size: SizeButton.L,
+};
+
+export const OutlineSizeM = Template.bind({});
+OutlineSizeM.args = {
+    children: 'Text',
+    theme: ThemeButton.OUTLINE,
+    size: SizeButton.M,
+};
+
+export const OutlineSizeXL = Template.bind({});
+OutlineSizeXL.args = {
+    children: 'Text',
+    theme: ThemeButton.OUTLINE,
+    size: SizeButton.XL,
 };
 
 export const OutlineDark = Template.bind({});
