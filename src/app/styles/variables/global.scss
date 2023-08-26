@@ -1,6 +1,6 @@
 :root {
-    --font-family-main: "Rubik", "sans-serif";
-    --font-size-m: 16px;
+    --font-family-main: "Nunito", tahoma, sans-serif;
+    --font-size-m: px;
     --font-line-m: 24px;
     --font-m: var(--font-line-m) / var(--font-line-m) var(--font-family-main);
     --font-size-l: 24px;
@@ -9,7 +9,13 @@
     --font-size-xl: 32px;
     --font-line-xl: 40px;
     --font-xl: var(--font-line-xl) / var(--font-line-xl) var(--font-family-main);
-    --navbar-height: 50px;
+    --navbar-height: 60px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
+
+    // z - Индексы
+    --modal-z-index: 10;
+
+    // Цвета
+    --overlay-color: rgb(0 0 0 / 60%);
 }
