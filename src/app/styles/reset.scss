@@ -11,3 +11,46 @@ select {
     margin: 0;
     font: inherit;
 }
+
+button {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+input {
+    all: unset;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 0;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+a {
+    text-decoration: inherit;
+}
+
+html::-webkit-scrollbar {
+    width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--color-medium-grey);
+}

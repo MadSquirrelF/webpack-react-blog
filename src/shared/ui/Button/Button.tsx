@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
@@ -5,6 +6,8 @@ import styles from './Button.module.scss';
 export enum ThemeButton {
   CLEAR = 'clear',
   CLEAR_INVERT = 'clearInverted',
+  DEFAULT = 'default',
+  SVG_BTN = 'svg_btn',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERT = 'backgroundInverted',

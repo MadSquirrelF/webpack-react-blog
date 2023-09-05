@@ -1,8 +1,10 @@
+/* stylelint-disable no-descending-specificity */
 .Button {
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--primary-color);
 }
 
 .clearInverted,
@@ -24,6 +26,43 @@
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
     background: none;
+}
+
+.default {
+    border-radius: 8px;
+    padding: 16px;
+    color: white;
+    background-color: var(--active-color-default);
+
+    &:hover {
+        background-color: var(--active-color-hover);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:disabled,
+    &[disabled] {
+        background-color: var(--active-color-disabled);
+        pointer-events: none;
+    }
+}
+
+.svg_btn {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    color: var(--color-medium-grey);
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    svg:hover {
+        color: var(--color-dark-grey);
+    }
 }
 
 .background {

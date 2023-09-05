@@ -28,6 +28,18 @@ Clear.args = {
     theme: ThemeButton.CLEAR,
 };
 
+export const Default = Template.bind({});
+Default.args = {
+    children: 'Text',
+    theme: ThemeButton.DEFAULT,
+};
+
+export const Svg = Template.bind({});
+Svg.args = {
+    children: '+',
+    theme: ThemeButton.SVG_BTN,
+};
+
 export const ClearInverted = Template.bind({});
 ClearInverted.args = {
     children: 'Text',

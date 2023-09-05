@@ -11,5 +11,10 @@
   "Обновить страницу": "Reload page",
   "Создать ошибку": "Throw error",
   "Короткий язык": "En",
-  "Войти": "Sign in"
+  "Войти": "Sign in",
+  "Авторизация": "Authorization",
+  "Логин": "Login",
+  "Введите логин": "Enter login",
+  "Пароль": "Password",
+  "Введите пароль": "Enter password"
 }
