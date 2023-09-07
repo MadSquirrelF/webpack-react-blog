@@ -3,14 +3,35 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { useDispatch, useSelector } from 'react-redux';
+import { memo, useCallback } from 'react';
+import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
+import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { getLoginState } from '../../model/selectors/getLoginState/selectLoginState';
 import styles from './LoginForm.module.scss';
 
 interface LoginFormProps {
  className?: string;
 }
 
-export const LoginForm = ({ className }: LoginFormProps) => {
+export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
+
+    const dispatch = useDispatch();
+    const { username, password } = useSelector(getLoginState);
+
+    const onChangeUsername = useCallback((value: string) => {
+        dispatch(loginActions.setUsername(value));
+    }, [dispatch]);
+
+    const onChangePassword = useCallback((value: string) => {
+        dispatch(loginActions.setPassword(value));
+    }, [dispatch]);
+
+    const onLoginClick = useCallback(() => {
+        dispatch(loginByUsername({ username, password }));
+    }, [dispatch, password, username]);
+
     return (
         <div className={classNames(styles.LoginForm, {}, [className])}>
             <h2 className={styles.title}>{t('Авторизация')}</h2>
@@ -19,6 +40,8 @@ export const LoginForm = ({ className }: LoginFormProps) => {
                 label={t('Логин')}
                 placeholder={t('Введите логин')}
                 type="text"
+                onChange={onChangeUsername}
+                value={username}
             />
             <Input
                 label={t('Пароль')}
@@ -26,10 +49,12 @@ export const LoginForm = ({ className }: LoginFormProps) => {
                 isPassword
                 type="password"
                 className={styles.password}
+                onChange={onChangePassword}
+                value={password}
             />
-            <Button className={styles.loginBtn} theme={ThemeButton.DEFAULT}>
+            <Button className={styles.loginBtn} theme={ThemeButton.DEFAULT} onClick={onLoginClick}>
                 {t('Войти')}
             </Button>
         </div>
     );
-};
+});
