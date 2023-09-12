@@ -2,7 +2,7 @@
     --bg-color-default: #f4f6fb;
     --bg-color-alt: #fff;
     --active-color-default: #4315f2;
-    --active-color-disable: #4318f280;
+    --active-color-disabled: #4318f280;
     --active-color-hover: #5d35ff;
     --primary-color: #000;
     --color-dark-grey: #7f7d85;
@@ -12,4 +12,7 @@
     --color-grey-light-100: #f9f9fc;
     --color-grey-light-400: #b7b5c2;
     --error-color: #ea334d;
+    --error-bg:
+        linear-gradient(0deg, rgb(234 51 77 / 10%), rgb(234 51 77 / 10%)),
+        #fff;
 }

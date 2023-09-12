@@ -1,7 +1,12 @@
 .title {
     margin-bottom: 40px;
+    font: var(--font-xl);
 }
 
 .loginBtn {
     width: 100%;
+}
+
+.msgError {
+    margin-top: 10px;
 }

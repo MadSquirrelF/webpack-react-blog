@@ -16,5 +16,7 @@
   "Логин": "Login",
   "Введите логин": "Enter login",
   "Пароль": "Password",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Неправильный логин или пароль": "Wrong login or password",
+  "Выйти": "Logout"
 }

@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import CloseIcon from 'shared/assets/icons/icon-close-error.svg';
 
 import { Button, SizeButton, ThemeButton } from './Button';
 
@@ -32,6 +33,19 @@ export const Default = Template.bind({});
 Default.args = {
     children: 'Text',
     theme: ThemeButton.DEFAULT,
+};
+
+export const DefaultDisabled = Template.bind({});
+DefaultDisabled.args = {
+    children: 'Text',
+    theme: ThemeButton.DEFAULT,
+    disabled: true,
+};
+
+export const CloseError = Template.bind({});
+CloseError.args = {
+    children: <CloseIcon />,
+    theme: ThemeButton.ERROR_CLOSE,
 };
 
 export const Svg = Template.bind({});
