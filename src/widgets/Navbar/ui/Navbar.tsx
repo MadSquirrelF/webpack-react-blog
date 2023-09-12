@@ -36,7 +36,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     if (authData) {
         return (
             <div className={classNames(styles.Navbar, {}, [className])}>
-                <Button theme={ThemeButton.DEFAULT} className={styles.links} onClick={onLogout} type="button">
+                <Button theme={ThemeButton.DEFAULT} className={styles.linkLogout} onClick={onLogout} type="button">
                     {t('Выйти')}
                 </Button>
             </div>
