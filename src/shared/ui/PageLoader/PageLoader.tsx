@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Loader } from '../Loader/Loader';
+import { Loader, ThemeLoader } from '../Loader/Loader';
 import style from './PageLoader.module.scss';
 
 interface PageLoaderProps {
@@ -7,7 +7,7 @@ interface PageLoaderProps {
 }
 const PageLoader = ({ className }: PageLoaderProps) => (
     <div className={classNames(style.PageLoader, {}, [className])}>
-        <Loader />
+        <Loader theme={ThemeLoader.MAIN_LOADER} />
     </div>
 );
 

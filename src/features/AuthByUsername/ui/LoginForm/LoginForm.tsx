@@ -4,10 +4,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback } from 'react';
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { Error } from 'shared/ui/Error/Error';
+import { Loader, ThemeLoader } from 'shared/ui/Loader/Loader';
 import { getLoginState } from '../../model/selectors/getLoginState/selectLoginState';
 import styles from './LoginForm.module.scss';
 
@@ -56,7 +57,9 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
                 value={password}
             />
             <Button disabled={isLoading} className={styles.loginBtn} theme={ThemeButton.DEFAULT} onClick={onLoginClick}>
-                {t('Войти')}
+                {
+                    isLoading ? <Loader theme={ThemeLoader.BTN_LOADER} /> : <span>{t('Войти')}</span>
+                }
             </Button>
 
             {

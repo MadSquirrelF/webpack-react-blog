@@ -1,10 +1,16 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import './Loader.scss';
 
-interface LoaderProps {
-    className?: string;
+export enum ThemeLoader {
+    MAIN_LOADER = 'mainLoader',
+    BTN_LOADER = 'btnLoader'
 }
 
-export const Loader = ({ className }: LoaderProps) => (
-    <span className={classNames('loader', {}, [className])} />
+interface LoaderProps {
+    className?: string;
+    theme?:ThemeLoader
+}
+
+export const Loader = ({ className, theme }: LoaderProps) => (
+    <span className={classNames(theme, {}, [className])} />
 );
