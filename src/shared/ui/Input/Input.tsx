@@ -15,7 +15,7 @@ interface InputProps extends HTMLInputProps {
   placeholder: string;
   label: string;
   isPassword?: boolean;
-  onChange?: (value: string) => unknown;
+  onChange?: (value: string) => void;
   autofocus?: boolean;
 }
 
