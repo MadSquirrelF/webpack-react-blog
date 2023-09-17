@@ -12,14 +12,14 @@ type ReducerListEntry = [StateSchemaKey, Reducer]
 
 interface DynamicModuleLoaderProps {
   reducers: ReducerList;
-  removeAfteUnmount?: boolean;
+  removeAfterUnmount?: boolean;
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const {
         children,
         reducers,
-        removeAfteUnmount,
+        removeAfterUnmount,
     } = props;
 
     const store = useStore() as ReduxStoreWithManager;
@@ -33,7 +33,7 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
         });
 
         return () => {
-            if (removeAfteUnmount) {
+            if (removeAfterUnmount) {
                 Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
                     store.reducerManager.remove(name);
                     dispatch({ type: `@DESTROY ${name} reducer` });
