@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import React, {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
@@ -28,13 +28,13 @@ export const Input = memo((props: InputProps) => {
         onChange?.(e.target.value);
     };
 
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef<HTMLInputElement | null>(null);
 
     const [isPasswordShown, setPasswordShown] = useState(false);
 
     const ChangeInputType = isPasswordShown ? 'text' : 'password';
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [styles.password]: isPassword,
     };
 

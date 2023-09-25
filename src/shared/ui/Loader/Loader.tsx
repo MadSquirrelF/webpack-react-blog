@@ -11,6 +11,6 @@ interface LoaderProps {
     theme?:ThemeLoader
 }
 
-export const Loader = ({ className, theme }: LoaderProps) => (
+export const Loader = ({ className, theme = ThemeLoader.MAIN_LOADER }: LoaderProps) => (
     <span className={classNames(theme, {}, [className])} />
 );

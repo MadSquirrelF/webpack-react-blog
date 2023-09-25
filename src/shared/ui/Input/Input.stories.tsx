@@ -20,14 +20,14 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
     placeholder: 'Enter name',
-    lable: 'Game of Thrones',
+    label: 'Game of Thrones',
     value: 'Game of Thrones',
 };
 
 export const Password = Template.bind({});
 Password.args = {
     placeholder: 'Enter password',
-    lable: 'Password',
+    label: 'Password',
     value: '12345',
     isPassword: true,
 };
@@ -35,7 +35,7 @@ Password.args = {
 export const Dark = Template.bind({});
 Dark.args = {
     placeholder: 'Enter name',
-    lable: 'Game of Thrones',
+    label: 'Game of Thrones',
     value: 'Game of Thrones',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
