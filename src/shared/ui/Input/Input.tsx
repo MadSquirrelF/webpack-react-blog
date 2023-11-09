@@ -7,21 +7,22 @@ import EyeOpened from 'shared/assets/icons/icon-opened-eye.svg';
 import styles from './Input.module.scss';
 import { Button, ThemeButton } from '../Button/Button';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   placeholder: string;
   label: string;
   isPassword?: boolean;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
     const {
-        className, value, onChange, autofocus, placeholder, isPassword, label, type = 'text', ...otherProps
+        className, value, onChange, autofocus, readonly, placeholder, isPassword, label, type = 'text', ...otherProps
     } = props;
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +37,7 @@ export const Input = memo((props: InputProps) => {
 
     const mods: Mods = {
         [styles.password]: isPassword,
+        [styles.readonly]: readonly,
     };
 
     useEffect(() => {
@@ -59,6 +61,7 @@ export const Input = memo((props: InputProps) => {
                     name={label}
                     value={value}
                     onChange={onChangeHandler}
+                    readOnly={readonly}
                     {...otherProps}
                 />
                 {

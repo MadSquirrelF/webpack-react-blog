@@ -28,6 +28,27 @@
     background: none;
 }
 
+.decline {
+    border-radius: 8px;
+    padding: 16px;
+    color: white;
+    background-color: var(--error-color);
+
+    &:hover {
+        background-color: var(--error-color-hover);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:disabled,
+    &[disabled] {
+        background-color: var(--error-color-disabled);
+        pointer-events: none;
+    }
+}
+
 .default {
     border-radius: 8px;
     padding: 16px;

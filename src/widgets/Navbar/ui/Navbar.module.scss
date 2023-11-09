@@ -18,10 +18,5 @@
     .linkLogout {
         margin-left: auto;
         padding: 8px;
-        background-color: var(--error-color);
-
-        &:hover {
-            background-color: var(--error-color-hover);
-        }
     }
 }

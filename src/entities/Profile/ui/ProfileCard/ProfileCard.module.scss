@@ -4,18 +4,44 @@
     border-radius: 10px;
 }
 
-.header {
+.editing {
+    border: 2px solid var(--active-color-default);
+}
+
+.bottom {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.editBtn {
-    margin-left: auto;
+.top {
+    display: flex;
+    align-items: center;
 }
 
-.data {
-    margin-top: 30px;
+.InputContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10%;
 }
 
 .input {
     margin-top: 10px;
+    width: 45%;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
 }

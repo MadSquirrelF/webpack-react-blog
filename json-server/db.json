@@ -25,13 +25,13 @@
       "password": "admin"
     }
   ],
-  "profile": { 
+  "profile": {
     "firstname": "Artem",
     "lastname": "Shabanov",
     "age": 22,
     "currency": "RUB",
     "country": "Russia",
-    "city": "Chelyabick",
+    "city": "Chelyabinsk",
     "username": "admin",
     "avatar": "https://sneg.top/uploads/posts/2023-06/1687801316_sneg-top-p-avatarka-patrika-pinterest-6.jpg"
   }

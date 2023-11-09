@@ -9,14 +9,23 @@
     position: relative;
     outline: 1px solid var(--color-medium-grey);
     border-radius: 6px;
+    background-color: var(--bg-color-alt);
     padding: 16px;
     width: 100%;
     box-sizing: border-box;
     color: var(--color-dark-grey);
-    transition: outline 0.1s ease-in-out;
 
     &:focus-within {
+        transition: outline 0.1s ease-in-out;
         outline: 2px solid var(--active-color-default);
+    }
+}
+
+.readonly {
+    outline: none;
+
+    &:focus-within {
+        outline: none;
     }
 }
 

@@ -35,6 +35,19 @@ Default.args = {
     theme: ThemeButton.DEFAULT,
 };
 
+export const Decline = Template.bind({});
+Decline.args = {
+    children: 'Text',
+    theme: ThemeButton.DECLINE,
+};
+
+export const DeclineDisabled = Template.bind({});
+DeclineDisabled.args = {
+    children: 'Text',
+    theme: ThemeButton.DECLINE,
+    disabled: true,
+};
+
 export const DefaultDisabled = Template.bind({});
 DefaultDisabled.args = {
     children: 'Text',

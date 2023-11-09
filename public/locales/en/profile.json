@@ -1,6 +1,24 @@
 {
   "Профиль": "Profile" ,
   "Редактировать": "Edit",
-  "Ваше имя": "Your firstname" ,
-  "Ваша фамилия": "Your lastname" 
+  "Ваше имя": "Your firstname",
+  "Ваша фамилия": "Your lastname",
+  "Ваш возраст": "Your age",
+  "Ваш город": "Your city",
+  "Ваше имя пользователя": "Your username",
+  "Имя пользователя": "Username",
+  "Ваше аватар": "Your avatar url",
+  "Аватар": "Avatar",
+  "Имя": "Firstname",
+  "Фамилия": "Lastname",
+  "Возраст": "Age",
+  "Город": "City",
+  "Ошибка при загрузке профиля": "Error on loading profile page",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Серверная ошибка при сохранении": "Server error on save",
+  "Некорректно введен возраст": "Invalid age",
+  "Имя и фамилия обязательные поля": "Firstname and Lastname is required",
+  "Данные не указаны": "Data is empty",
+  "Некорректный регион": "Invaild country"
 }
