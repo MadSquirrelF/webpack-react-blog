@@ -11,9 +11,7 @@ interface ArticlesPageProps {
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const { t } = useTranslation('');
     return (
-        <div className={classNames(styles.ArticlesPage, {}, [className])}>
-            ArticlesPage
-        </div>
+        <div className={classNames(styles.ArticlesPage, {}, [className])} />
     );
 };
 

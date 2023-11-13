@@ -2,7 +2,8 @@
     --bg-color-default: #0c0c0c;
     --bg-color-alt: #181818;
     --active-color-default: #4315f2;
-    --active-color-disabled: #4318f280;
+    --active-color-active: #2b0ab1;
+    --active-color-disabled: #240c85;
     --active-color-hover: #5d35ff;
     --primary-color: #e4e4e4;
     --color-dark-grey: #7f7d85;
@@ -17,4 +18,11 @@
     --error-bg:
         linear-gradient(0deg, rgb(234 51 77 / 10%), rgb(234 51 77 / 10%)),
         #181818;
+
+    // skeleton
+    --skeleton-color: #1515ad;
+    --skeleton-shadow: #2b2be8;
+
+    // code
+    --code-bg: #1212a1;
 }

@@ -108,7 +108,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                 <ProfilePageHeader />
                 {
                     validateErrors?.length && validateErrors.map((err) => (
-                        <Error error={validateErrorsTranslations[err]} className="mb" />
+                        <Error key={err} error={validateErrorsTranslations[err]} className="mb" />
                     ))
                 }
                 <ProfileCard
