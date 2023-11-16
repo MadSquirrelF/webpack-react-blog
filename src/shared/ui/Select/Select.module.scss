@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: left;
+    margin-bottom: 24px;
 }
 
 .label {
@@ -12,10 +13,10 @@
 
 .select {
     width: 100%;
-    background-color: var(--bg-color-alt);
+    background-color: var(--bg-secondary);
     padding: 16px;
     box-sizing: border-box;
-    color: var(--primary-color);
+    color: var(--text-primary);
     outline: 1px solid var(--color-medium-grey);
     border-radius: 6px;
     position: relative;
@@ -27,8 +28,8 @@
     }
 
     option {
-        background-color: var(--bg-color-alt);
-        color: var(--primary-color);
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
         outline: 1px solid var(--color-medium-grey);
     }
 }

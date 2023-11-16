@@ -14,21 +14,21 @@
   "comments": [
     {
       "id": "1",
-      "text": "some comment",
+      "text": "Brother, I understand you. This digital jungle is annoying sometimes. But in the end, your code creates impressive things. Go ahead, you can do it!",
       "articleId": "1",
       "userId": "1"
     },
     {
       "id": "2",
-      "text": "some comment 2",
+      "text": "What a hellish place? The design of the site is out of rhythm, the information is unclear, and navigation is a nightmare. Some kind of mess, not for men!",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
-      "text": "some comment 3",
+      "text": "Omg, is this a fake Facebook Post? Damn it looks so real! Start building your own. Use the settings to the left to begin - You can also add comments & emoticons Wink",
       "articleId": "1",
-      "userId": "1"
+      "userId": "3"
     }
   ],
   "articles": [
@@ -107,13 +107,22 @@
       "id": "1",
       "username": "admin",
       "password": "admin",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?w=826&t=st=1700173085~exp=1700173685~hmac=5d18d7cb3b79c038be94cda5f1198b117535b594849f530b5957b8589051c29f"
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "Adam Denisov",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=1380&t=st=1700173116~exp=1700173716~hmac=4dc5c6eb9c6928639faaee590a49b96e544ff5dc77a10e596d7a9e3946b7ad72"
+    },
+    {
+      "id": "3",
+      "username": "Abbie Wilson",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://img.freepik.com/free-photo/one-young-woman-listening-music-with-headphones-generated-by-ai_188544-10009.jpg?t=st=1700173146~exp=1700176746~hmac=e6c11ab2aaabd9664265b94ec09672a964a8b056a22df1698606b690e7929de6&w=1380"
     }
   ],
   "profile": {

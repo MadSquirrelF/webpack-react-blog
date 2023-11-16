@@ -2,14 +2,15 @@
 @import "variables/global";
 @import "themes/dark";
 @import "themes/light";
+@import "themes/black";
 
 body {
     font: var(--font-m);
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .app {
-    background-color: var(--bg-color-default);
+    background-color: var(--bg-secondary);
     min-height: 100vh;
 }
 

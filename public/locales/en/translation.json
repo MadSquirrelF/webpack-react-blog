@@ -21,5 +21,9 @@
   "Неправильный логин или пароль": "Wrong login or password",
   "Выйти": "Logout",
   "Профиль": "Profile",
-  "Страница профиля": "Profile page"
+  "Страница профиля": "Profile page",
+  "Светлая": "Light",
+  "Темная": "Dark",
+  "Ночная": "Black",
+  "Тема": "Theme"
 }

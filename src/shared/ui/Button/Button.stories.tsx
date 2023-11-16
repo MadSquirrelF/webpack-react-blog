@@ -18,11 +18,6 @@ export default {
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'Text',
-};
-
 export const Clear = Template.bind({});
 Clear.args = {
     children: 'Text',

@@ -1,5 +1,8 @@
 :root {
     --font-family-main: inter, avenir, helvetica, arial, sans-serif;
+    --font-size-s: 14px;
+    --font-line-s: 20px;
+    --font-s: var(--font-line-s) / var(--font-line-s) var(--font-family-main);
     --font-size-m: 16px;
     --font-line-m: 24px;
     --font-m: var(--font-line-m) / var(--font-line-m) var(--font-family-main);

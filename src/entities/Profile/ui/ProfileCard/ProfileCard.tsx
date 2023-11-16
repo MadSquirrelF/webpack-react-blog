@@ -76,7 +76,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
                         ) : <Avatar src={defaultAvatar} alt="default avatar" size={150} />
                     }
                     <div className={styles.InputContainer}>
-                        {' '}
                         <Input
                             value={data?.firstname}
                             placeholder={t('Ваше имя')}
@@ -113,17 +112,23 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     </div>
 
                 </div>
-                <div className={styles.bottom}>
 
-                    <Input
-                        value={data?.city}
-                        placeholder={t('Ваш город')}
-                        label={t('Город')}
-                        className={styles.input}
+                <div className={styles.flexBox}>
+                    <CurrencySelect
+                        value={data?.currency}
+                        onChange={onChangeCurrency}
                         readonly={readonly}
-                        onChange={onChangeCity}
+                        className={styles.input}
                     />
+                    <CountriesSelect
+                        value={data?.country}
+                        onChange={onChangeCountries}
+                        readonly={readonly}
+                        className={styles.input}
+                    />
+                </div>
 
+                <div className={styles.flexBox}>
                     <Input
                         value={data?.avatar}
                         placeholder={t('Аватар')}
@@ -132,15 +137,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                         readonly={readonly}
                         onChange={onChangeAvatar}
                     />
-                    <CurrencySelect
-                        value={data?.currency}
-                        onChange={onChangeCurrency}
+
+                    <Input
+                        value={data?.city}
+                        placeholder={t('Ваш город')}
+                        label={t('Город')}
+                        className={styles.input}
                         readonly={readonly}
-                    />
-                    <CountriesSelect
-                        value={data?.country}
-                        onChange={onChangeCountries}
-                        readonly={readonly}
+                        onChange={onChangeCity}
                     />
                 </div>
 

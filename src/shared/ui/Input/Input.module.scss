@@ -9,7 +9,7 @@
     position: relative;
     outline: 1px solid var(--color-medium-grey);
     border-radius: 6px;
-    background-color: var(--bg-color-alt);
+    background-color: var(--bg-secondary);
     padding: 16px;
     width: 100%;
     box-sizing: border-box;
@@ -48,7 +48,7 @@
 
 .input {
     width: 100%;
-    color: var(--primary-color);
+    color: var(--text-primary);
 
     &::placeholder {
         color: var(--color-medium-grey);

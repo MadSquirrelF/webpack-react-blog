@@ -60,6 +60,7 @@ export const Input = memo((props: InputProps) => {
                     placeholder={placeholder}
                     name={label}
                     value={value}
+                    autoComplete="new-password"
                     onChange={onChangeHandler}
                     readOnly={readonly}
                     {...otherProps}

@@ -1,10 +1,20 @@
 .app_dark_theme {
-    --bg-color-default: #0c0c0c;
-    --bg-color-alt: #181818;
-    --active-color-default: #4315f2;
-    --active-color-active: #2b0ab1;
-    --active-color-disabled: #240c85;
-    --active-color-hover: #5d35ff;
+    // new styles
+    --text-primary: #eee;
+    --text-secondary: #d3d5db;
+    --border-primary: #454545;
+    --bg-primary: #323339;
+    --bg-secondary: #222128;
+    --bg-button: #494a50;
+    --slider-shadow: inset 0 1px 1px #767676;
+    --active-color-default: #4b39ef;
+    --active-color-disabled: #1b1940;
+    --active-color-hover: #4f3bff;
+
+    // old styles
+    --bg-color-default: #262d35;
+    --bg-color-alt: #14181b;
+    --border-color: #373d49;
     --primary-color: #e4e4e4;
     --color-dark-grey: #7f7d85;
     --color-medium-grey: #d2d0dc;
@@ -12,7 +22,7 @@
     --color-grey-light-200: #e8e7ed;
     --color-grey-light-100: #f9f9fc;
     --color-grey-light-400: #b7b5c2;
-    --error-color: #ea334d;
+    --error-color: #fb6465;
     --error-color-hover: #e8455d;
     --error-color-disabled: #b8364a;
     --error-bg:
@@ -25,4 +35,7 @@
 
     // code
     --code-bg: #1212a1;
+
+    // box-shadow
+    --box-shadow-default: -1px 1px 4px 0 rgb(0 0 0 / 25%);
 }

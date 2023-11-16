@@ -2,44 +2,51 @@
     height: calc(100vh - var(--navbar-height));
     width: 300px;
     min-width: 300px;
-    background-color: var(--bg-color-alt);
     position: relative;
     transition: width 0.3s ease-in-out;
+    background-color: var(--bg-primary);
+    padding: 30px;
 }
 
 .switchers {
     position: absolute;
     bottom: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    left: 30px;
+    display: block;
+    align-items: left;
 }
 
 .lang {
-    margin-left: 20px;
-    color: var(--primary-color);
+    color: var(--text-primary);
+    margin-bottom: 15px;
 }
 
 .collapsedBtn {
     position: absolute;
     right: -40px;
     bottom: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-default);
+    background-color: var(--bg-primary);
 }
 
 .items {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
     min-width: var(--sidebar-width-collapsed);
+    padding: 5px;
 
     .switchers {
-        flex-direction: column;
+        display: flex;
+        width: 100%;
+        left: 0;
         align-items: center;
+        flex-direction: column;
     }
 
     .lang {

@@ -1,11 +1,18 @@
 .item {
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: var(--bg-secondary);
+        outline: 1px solid var(--border-primary);
+    }
 }
 
 .icon {
-    fill: var(--primary-color);
+    fill: var(--text-secondary);
     width: 25px;
     height: 25px;
 }
@@ -13,10 +20,20 @@
 .link {
     margin-left: 10px;
     opacity: 1;
+    color: var(--text-primary);
+    font-size: 16px;
 }
 
 .collapsed {
     .link {
         display: none;
+    }
+
+    .item {
+        justify-content: center;
+    }
+
+    .icon {
+        margin: 0 auto;
     }
 }

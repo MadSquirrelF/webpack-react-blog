@@ -1,0 +1,20 @@
+.CommentCard {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--box-shadow-default);
+}
+
+.avatar {
+    flex: none;
+    margin-right: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}

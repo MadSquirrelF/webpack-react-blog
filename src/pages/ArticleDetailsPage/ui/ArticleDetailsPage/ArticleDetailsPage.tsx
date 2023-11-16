@@ -4,16 +4,37 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
+import { Text } from 'shared/ui/Text/Text';
+import { CommentList } from 'entities/Comment';
+import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useSelector } from 'react-redux';
+import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import styles from './ArticleDetailsPage.module.scss';
+import { articleDetailsCommentReducer, getArticleComments } from '../../model/slices/ArticleDetailsCommentSlice';
 
 interface ArticleDetailsPageProps {
   className?: string;
 }
 
+const reducers: ReducerList = {
+    articleDetailsComment: articleDetailsCommentReducer,
+};
+
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
 
     const { id } = useParams<{id: string}>();
+
+    const comments = useSelector(getArticleComments.selectAll);
+
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+
+    const dispatch = useAppDispatch();
+
+    useInitialEffect(() => dispatch(fetchCommentsByArticleId(id)));
 
     if (!id) {
         return (
@@ -24,10 +45,21 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
 
     return (
-        <div className={classNames(styles.ArticleDetailsPage, {}, [className])}>
-            <ArticleDetails id={id} />
-        </div>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <div className={classNames(styles.ArticleDetailsPage, {}, [className])}>
+                <ArticleDetails id={id} />
+                <Text className={styles.commenTitle} title={t('Комментарии')} />
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
+            </div>
+        </DynamicModuleLoader>
+
     );
 };
 
 export default memo(ArticleDetailsPage);
+function dispatch(arg0: any): void {
+    throw new Error('Function not implemented.');
+}

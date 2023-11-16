@@ -1,10 +1,11 @@
 .Code {
-    border: 1px solid var(--active-color-default);
+    border: 1px solid var(--border-primary);
     border-radius: 5px;
     padding: 20px;
     position: relative;
     overflow: auto;
-    background: var(--bg-color-alt);
+    box-shadow: inset 1px 1px 5px var(--bg-secondary);
+    background: var(--bg-primary);
 
     &::-webkit-scrollbar {
         height: 7px;
@@ -18,6 +19,10 @@
     &::-webkit-scrollbar-thumb {
         border-radius: 5px;
         background: var(--active-color-default);
+    }
+
+    code {
+        line-height: 30px;
     }
 }
 
@@ -81,11 +86,4 @@
             background-color: var(--active-color-hover);
         }
     }
-
-    // &:active {
-    //     .icon {
-    //         transition: 0.3s ease-in-out;
-    //         transform: translateY(1px);
-    //     }
-    // }
 }

@@ -7,7 +7,7 @@
     z-index: -1;
     opacity: 0;
     pointer-events: none;
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .overlay {
@@ -22,10 +22,12 @@
 .content {
     padding: 20px;
     border-radius: 12px;
-    background: var(--bg-color-alt);
+    background: var(--bg-primary);
     transition: 0.3s transform;
     transform: scale(0.5);
     max-width: 60%;
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--box-shadow-default);
 }
 
 .opened {

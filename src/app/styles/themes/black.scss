@@ -1,0 +1,41 @@
+.app_black_theme {
+    // new styles
+    --text-primary: #edeeef;
+    --text-secondary: #d4d7e1;
+    --border-primary: #323232;
+    --bg-primary: #1b1d23;
+    --bg-secondary: #000001;
+    --bg-button: #343844;
+    --slider-shadow: inset 0 1px 1px #555;
+    --active-color-default: #4b39ef;
+    --active-color-disabled: #1b1940;
+    --active-color-hover: #4f3bff;
+
+    // old styles
+    --bg-color-default: #262d35;
+    --bg-color-alt: #14181b;
+    --border-color: #373d49;
+    --primary-color: #e4e4e4;
+    --color-dark-grey: #7f7d85;
+    --color-medium-grey: #d2d0dc;
+    --color-grey-light-300: #f1effc;
+    --color-grey-light-200: #e8e7ed;
+    --color-grey-light-100: #f9f9fc;
+    --color-grey-light-400: #b7b5c2;
+    --error-color: #fb6465;
+    --error-color-hover: #e8455d;
+    --error-color-disabled: #b8364a;
+    --error-bg:
+        linear-gradient(0deg, rgb(234 51 77 / 10%), rgb(234 51 77 / 10%)),
+        #181818;
+
+    // skeleton
+    --skeleton-color: #1515ad;
+    --skeleton-shadow: #2b2be8;
+
+    // code
+    --code-bg: #1212a1;
+
+    // box-shadow
+    --box-shadow-default: -1px 1px 4px 0 rgb(0 0 0 / 25%);
+}

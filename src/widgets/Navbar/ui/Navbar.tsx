@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -6,6 +7,8 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import Rus from 'shared/assets/icons/rus-icon.svg';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {

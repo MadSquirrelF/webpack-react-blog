@@ -1,14 +1,14 @@
 .Navbar {
     width: 100%;
     height: var(--navbar-height);
-    background-color: var(--bg-color-alt);
     display: flex;
     align-items: center;
     padding: 20px;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
 
     .links {
         margin-left: auto;
-        padding: 8px;
 
         .mainLink {
             margin-right: 15px;
