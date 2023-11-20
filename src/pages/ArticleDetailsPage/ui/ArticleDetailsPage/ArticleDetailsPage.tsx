@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
@@ -10,8 +10,11 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useSelector } from 'react-redux';
 import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { AddCommentForm } from 'features/addCommentForm';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId }
+    from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import styles from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentReducer, getArticleComments } from '../../model/slices/ArticleDetailsCommentSlice';
 
@@ -34,6 +37,13 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     const dispatch = useAppDispatch();
 
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text));
+        },
+        [dispatch],
+    );
+
     useInitialEffect(() => dispatch(fetchCommentsByArticleId(id)));
 
     if (!id) {
@@ -49,6 +59,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <div className={classNames(styles.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text className={styles.commenTitle} title={t('Комментарии')} />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}
@@ -60,6 +71,3 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 };
 
 export default memo(ArticleDetailsPage);
-function dispatch(arg0: any): void {
-    throw new Error('Function not implemented.');
-}

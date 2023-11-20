@@ -17,4 +17,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+
+    &:hover {
+        .avatar {
+            outline: 2px solid var(--active-color-default);
+        }
+    }
 }

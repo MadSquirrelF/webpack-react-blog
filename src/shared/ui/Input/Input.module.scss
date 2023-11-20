@@ -7,13 +7,14 @@
 
 .InputWrapper {
     position: relative;
-    outline: 1px solid var(--color-medium-grey);
-    border-radius: 6px;
+    box-shadow: none;
     background-color: var(--bg-secondary);
+    outline: 1px solid var(--border-primary);
+    border-radius: 6px;
     padding: 16px;
     width: 100%;
     box-sizing: border-box;
-    color: var(--color-dark-grey);
+    color: var(--text-primary);
 
     &:focus-within {
         transition: outline 0.1s ease-in-out;

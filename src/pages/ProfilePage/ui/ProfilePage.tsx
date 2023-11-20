@@ -2,6 +2,7 @@ import {
     ProfileCard,
     ValidateProfileError,
     fetchProfileData,
+    getProfileData,
     getProfileError,
     getProfileIsLoading,
     getProfileReadonly,
@@ -9,7 +10,7 @@ import {
     profileActions,
     profileReducer,
 } from 'entities/Profile';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -19,6 +20,9 @@ import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Countries/model/types/countries';
 import { Error } from 'shared/ui/Error/Error';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
+
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducerList = {
@@ -31,6 +35,9 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
+
+    const { id } = useParams<{id: string}>();
+
     const dispatch = useAppDispatch();
 
     const formData = useSelector(getProfileForm);
@@ -47,11 +54,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({

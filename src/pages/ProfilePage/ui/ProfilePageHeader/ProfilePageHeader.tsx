@@ -3,9 +3,12 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import {
+    getProfileData, getProfileReadonly, profileActions, updateProfileData,
+} from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from 'entities/User';
 import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -18,6 +21,11 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     const readonly = useSelector(getProfileReadonly);
 
     const dispatch = useAppDispatch();
+
+    const authData = useSelector(getUserAuthData);
+    const profileData = useSelector(getProfileData);
+
+    const canEdit = authData?.id === profileData?.id;
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false));
@@ -36,20 +44,24 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
             <Text title={t('Профиль')} />
 
-            {readonly ? (
-                <Button theme={ThemeButton.DEFAULT} className={styles.editBtn} onClick={onEdit}>
-                    {t('Редактировать')}
-                </Button>
-            ) : (
-                <div className={styles.btnContainer}>
-                    <Button theme={ThemeButton.DECLINE} className={styles.cancelBtn} onClick={onCancelEdit}>
-                        {t('Отменить')}
-                    </Button>
-                    <Button theme={ThemeButton.DEFAULT} className={styles.saveBtn} onClick={onSaveEdit}>
-                        {t('Сохранить')}
-                    </Button>
-                </div>
+            {canEdit && (
+                <div className={styles.btnWrapper}>
+                    {readonly ? (
+                        <Button theme={ThemeButton.DEFAULT} className={styles.editBtn} onClick={onEdit}>
+                            {t('Редактировать')}
+                        </Button>
+                    ) : (
+                        <div className={styles.btnContainer}>
+                            <Button theme={ThemeButton.DECLINE} className={styles.cancelBtn} onClick={onCancelEdit}>
+                                {t('Отменить')}
+                            </Button>
+                            <Button theme={ThemeButton.DEFAULT} className={styles.saveBtn} onClick={onSaveEdit}>
+                                {t('Сохранить')}
+                            </Button>
+                        </div>
 
+                    )}
+                </div>
             )}
 
         </div>

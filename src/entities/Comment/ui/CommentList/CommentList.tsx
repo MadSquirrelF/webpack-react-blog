@@ -22,8 +22,14 @@ export const CommentList = memo((props: CommentListProps) => {
         <div className={classNames(styles.CommentList, {}, [className])}>
             {
                 comments?.length
-                    ? comments.map((comment) => (
-                        <CommentCard isLoading={isLoading} className={styles.comment} comment={comment} />
+                    ? comments.map((comment, index) => (
+                        <CommentCard
+                            isLoading={isLoading}
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={index}
+                            className={styles.comment}
+                            comment={comment}
+                        />
                     ))
                     : (
                         <Text text={t('Комментарии отсутствуют')} />

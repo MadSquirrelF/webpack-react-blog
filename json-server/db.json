@@ -29,6 +29,18 @@
       "text": "Omg, is this a fake Facebook Post? Damn it looks so real! Start building your own. Use the settings to the left to begin - You can also add comments & emoticons Wink",
       "articleId": "1",
       "userId": "3"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Nastya Polnuy lox",
+      "id": "KpqHQqL"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "jhgbjhkgkjgugui",
+      "id": "c-b8CR2"
     }
   ],
   "articles": [
@@ -39,7 +51,11 @@
       "img": "https://fuzeservers.ru/wp-content/uploads/7/3/d/73dcbfda2e324bdd9d06bfad3c61224f.jpeg",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT", "Frontend", "JS"],
+      "type": [
+        "IT",
+        "Frontend",
+        "JS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -125,14 +141,39 @@
       "avatar": "https://img.freepik.com/free-photo/one-young-woman-listening-music-with-headphones-generated-by-ai_188544-10009.jpg?t=st=1700173146~exp=1700176746~hmac=e6c11ab2aaabd9664265b94ec09672a964a8b056a22df1698606b690e7929de6&w=1380"
     }
   ],
-  "profile": {
-    "firstname": "Artem",
-    "lastname": "Shabanov",
-    "age": 22,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Chelyabinsk",
-    "username": "admin",
-    "avatar": "https://sneg.top/uploads/posts/2023-06/1687801316_sneg-top-p-avatarka-patrika-pinterest-6.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Artem",
+      "lastname": "Shabanov",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Chelyabinsk",
+      "username": "admin",
+      "avatar": "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?w=826&t=st=1700173085~exp=1700173685~hmac=5d18d7cb3b79c038be94cda5f1198b117535b594849f530b5957b8589051c29f"
+    },
+    {
+      "id": "2",
+      "firstname": "Adam",
+      "lastname": "Denisov",
+      "age": 32,
+      "currency": "USD",
+      "country": "USA",
+      "city": "Miami",
+      "username": "Adam Denisov",
+      "avatar": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=1380&t=st=1700173116~exp=1700173716~hmac=4dc5c6eb9c6928639faaee590a49b96e544ff5dc77a10e596d7a9e3946b7ad72"
+    },
+    {
+      "id": "3",
+      "firstname": "Abbie",
+      "lastname": "Wilson",
+      "age": 22,
+      "currency": "EUR",
+      "country": "Italy",
+      "city": "Rome",
+      "username": "Abbie Wilson",
+      "avatar": "https://img.freepik.com/free-photo/one-young-woman-listening-music-with-headphones-generated-by-ai_188544-10009.jpg?t=st=1700173146~exp=1700176746~hmac=e6c11ab2aaabd9664265b94ec09672a964a8b056a22df1698606b690e7929de6&w=1380"
+    }
+  ]
 }
