@@ -15,4 +15,25 @@ const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...
 
 export const Primary = Template.bind({});
 Primary.args = {
+    comment: {
+        id: '1',
+        text: 'Hello there!',
+        user: {
+            id: '1',
+            username: 'Artem',
+        },
+    },
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+    comment: {
+        id: '1',
+        text: 'Hello there!',
+        user: {
+            id: '1',
+            username: 'Artem',
+        },
+    },
+    isLoading: true,
 };

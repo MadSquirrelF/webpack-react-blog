@@ -13,7 +13,7 @@ import styles from './CommentCard.module.scss';
 
 interface CommentCardProps {
   className?: string;
-  comment: Comment;
+  comment?: Comment;
   isLoading?: boolean;
 }
 
@@ -23,7 +23,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(styles.CommentCard, {}, [className])}>
+            <div className={classNames(styles.CommentCard, {}, [className, styles.loading])}>
                 <div className={styles.header}>
                     <Skeleton width={30} height={30} border="50%" className={styles.avatar} />
                     <Skeleton width={100} height={16} border="10px" />
@@ -34,6 +34,11 @@ export const CommentCard = memo((props: CommentCardProps) => {
             </div>
         );
     }
+
+    if (!comment) {
+        return null;
+    }
+
     return (
         <div className={classNames(styles.CommentCard, {}, [className])}>
             <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={styles.header}>
