@@ -14,6 +14,7 @@ export enum TextAlign {
 }
 
 export enum TextSize {
+    XS = 'size_xs',
     S = 'size_s',
     M = 'size_m',
     L = 'size_l',

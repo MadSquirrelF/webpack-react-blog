@@ -21,11 +21,24 @@
 }
 
 .outline {
-    padding: 10px;
     border-radius: 10px;
-    border: 2px solid var(--text-primary);
-    color: var(--text-primary);
-    background: none;
+    font-size: 15px;
+    padding: 8px 20px;
+    font-weight: 700;
+    color: var(--active-color-default);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+
+    &:hover {
+        transition: 0.3s ease-in-out;
+        opacity: 0.8;
+    }
+
+    &:disabled,
+    &[disabled] {
+        color: var(--active-color-disabled);
+        pointer-events: none;
+    }
 }
 
 .decline {

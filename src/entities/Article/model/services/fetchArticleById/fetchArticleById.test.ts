@@ -9,6 +9,10 @@ const article: Article = {
     img: 'https://fuzeservers.ru/wp-content/uploads/7/3/d/73dcbfda2e324bdd9d06bfad3c61224f.jpeg',
     views: 1022,
     createdAt: '26.02.2022',
+    user: {
+        id: '1',
+        username: 'Admin',
+    },
     type: [ArticleType.IT, ArticleType.JS],
     blocks: [
         {
