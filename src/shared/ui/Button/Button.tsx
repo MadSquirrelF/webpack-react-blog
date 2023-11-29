@@ -15,6 +15,7 @@ export enum ThemeButton {
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERT = 'backgroundInverted',
+  SELECTOR = 'selector',
 }
 
 export enum SizeButton {

@@ -96,6 +96,36 @@
     }
 }
 
+.selector {
+    border-radius: 10px;
+    padding: 5px;
+    outline: 1px solid var(--border-primary);
+    background-color: var(--bg-primary);
+    box-shadow: var(--box-shadow-default);
+
+    svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--text-primary);
+    }
+
+    &:hover {
+        transition: all 0.1s ease-in-out;
+
+        svg {
+            transition: all 0.1s ease-in-out;
+            fill: white;
+        }
+
+        background-color: var(--active-color-disabled);
+    }
+
+    &:active {
+        transition: transform 0.1s ease-in-out;
+        transform: translateY(2px);
+    }
+}
+
 .svg_btn {
     width: 20px;
     height: 20px;

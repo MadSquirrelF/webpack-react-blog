@@ -1,0 +1,22 @@
+.ArticleViewSelector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .viewSelect {
+        &:first-child {
+            margin-right: 10px;
+        }
+    }
+
+    .selected {
+        transition: background-color 0.1s ease-in-out;
+        outline: 2px solid var(--active-color-default);
+        background-color: var(--active-color-disabled);
+
+        svg {
+            fill: white;
+        }
+    }
+}

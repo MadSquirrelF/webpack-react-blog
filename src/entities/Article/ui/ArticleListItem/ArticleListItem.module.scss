@@ -105,22 +105,31 @@
     width: 100%;
 
     .imageWrapper {
-        height: 300px;
+        height: 400px;
     }
 
     .textBlock {
         max-height: 210px;
-        overflow: hidden;
         margin-bottom: 20px;
-        text-overflow: ellipsis;
+        overflow-y: hidden;
     }
 }
 
 .SHORT {
     width: 300px;
 
+    .card {
+        max-height: 500px;
+        height: 500px;
+    }
+
+    .subtitle p {
+        font-size: 15px;
+    }
+
     .imageWrapper {
         height: 180px;
+        flex: none;
         border-radius: 10px 10px 0 0;
     }
 }
