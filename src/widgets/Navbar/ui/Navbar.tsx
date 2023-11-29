@@ -7,8 +7,6 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import Rus from 'shared/assets/icons/rus-icon.svg';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -37,20 +35,20 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <div className={classNames(styles.Navbar, {}, [className])}>
+            <header className={classNames(styles.Navbar, {}, [className])}>
                 <Button theme={ThemeButton.DECLINE} className={styles.linkLogout} onClick={onLogout} type="button">
                     {t('Выйти')}
                 </Button>
-            </div>
+            </header>
         );
     }
 
     return (
-        <div className={classNames(styles.Navbar, {}, [className])}>
+        <header className={classNames(styles.Navbar, {}, [className])}>
             <Button theme={ThemeButton.DEFAULT} className={styles.links} onClick={onShowModal} type="button">
                 {t('Войти')}
             </Button>
             <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-        </div>
+        </header>
     );
 });

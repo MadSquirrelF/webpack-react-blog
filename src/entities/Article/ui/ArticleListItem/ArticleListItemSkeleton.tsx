@@ -53,7 +53,6 @@ export const ArticleListItemSkeleton = memo(({ className, view }: ArticleListIte
                             <div className={styles.typeWrapper}>
                                 <Skeleton width={100} height={30} className={styles.type} />
                                 <Skeleton width={100} height={30} className={styles.type} />
-                                <Skeleton width={100} height={30} className={styles.type} />
                             </div>
                         </div>
                     </div>
@@ -89,7 +88,6 @@ export const ArticleListItemSkeleton = memo(({ className, view }: ArticleListIte
                     <div className={styles.alignWrapper}>
                         <Skeleton width="100%" height={40} className={styles.title} border="10px" />
                         <div className={styles.typeWrapper}>
-                            <Skeleton width={100} height={30} className={styles.type} />
                             <Skeleton width={100} height={30} className={styles.type} />
                             <Skeleton width={100} height={30} className={styles.type} />
                         </div>

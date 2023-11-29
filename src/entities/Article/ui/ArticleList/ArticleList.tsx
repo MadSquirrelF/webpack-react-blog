@@ -14,6 +14,13 @@ interface ArticleListProps {
   view?: ArticleView
 }
 
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SHORT ? 3 : 1)
+    .fill(0)
+    .map((item, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <ArticleListItemSkeleton className={styles.card} key={index} view={view} />
+    ));
+
 export const ArticleList = memo((props: ArticleListProps) => {
     const { t } = useTranslation();
 
@@ -21,24 +28,19 @@ export const ArticleList = memo((props: ArticleListProps) => {
         className, articles, isLoading, view = ArticleView.SHORT,
     } = props;
 
-    if (isLoading) {
-        return (
-            <div className={classNames(styles.ArticleList, {}, [className])}>
-                {
-                    new Array(view === ArticleView.SHORT ? 9 : 3).fill(0).map((item, index) => (
-                        // eslint-disable-next-line react/no-array-index-key
-                        <ArticleListItemSkeleton view={view} key={index} />
-                    ))
-                }
-            </div>
-        );
-    }
+    const renderArticle = (article: Article) => (
+        <ArticleListItem
+            article={article}
+            view={view}
+            className={styles.card}
+            key={article.id}
+        />
+    );
 
     return (
         <div className={classNames(styles.ArticleList, {}, [className])}>
-            {articles.length > 0 ? articles.map((item) => (
-                <ArticleListItem article={item} view={view} key={item.id} />
-            )) : null}
+            {articles.length > 0 ? articles.map(renderArticle) : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

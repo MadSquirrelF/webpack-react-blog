@@ -16,7 +16,7 @@ interface SidebarProps {
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
     const sidebarItemsList = useSelector(getSidebarItems);
     const { t } = useTranslation();
 
@@ -29,7 +29,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     ))), [collapsed, sidebarItemsList]);
 
     return (
-        <div
+        <aside
             data-testid="side_id"
             className={classNames(
                 styles.Sidebar,
@@ -49,13 +49,13 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 {collapsed ? <ArrowRightIcon /> : <ArrowLeftIcon />}
             </Button>
 
-            <div className={styles.items}>
+            <ul className={styles.items}>
                 {itemsList}
-            </div>
+            </ul>
             <div className={styles.switchers}>
                 <LangSwitcher className={styles.lang} />
                 <ThemeSwitcher short={collapsed} />
             </div>
-        </div>
+        </aside>
     );
 });

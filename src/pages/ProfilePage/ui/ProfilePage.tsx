@@ -2,7 +2,6 @@ import {
     ProfileCard,
     ValidateProfileError,
     fetchProfileData,
-    getProfileData,
     getProfileError,
     getProfileIsLoading,
     getProfileReadonly,
@@ -23,6 +22,7 @@ import { Error } from 'shared/ui/Error/Error';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
 
+import { Page } from 'shared/ui/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducerList = {
@@ -111,7 +111,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {
                     validateErrors?.length && validateErrors.map((err) => (
@@ -132,7 +132,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountries={onChangeCountries}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
 
     );
