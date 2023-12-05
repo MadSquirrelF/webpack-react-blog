@@ -99,7 +99,6 @@
 .selector {
     border-radius: 10px;
     padding: 5px;
-    outline: 1px solid var(--border-primary);
     background-color: var(--bg-primary);
     box-shadow: var(--box-shadow-default);
 
@@ -111,10 +110,16 @@
 
     &:hover {
         transition: all 0.1s ease-in-out;
+        color: white;
 
         svg {
             transition: all 0.1s ease-in-out;
             fill: white;
+        }
+
+        span {
+            transition: all 0.1s ease-in-out;
+            color: white;
         }
 
         background-color: var(--active-color-disabled);

@@ -13,7 +13,7 @@ const article: Article = {
         id: '1',
         username: 'Admin',
     },
-    type: [ArticleType.IT, ArticleType.JS],
+    type: [ArticleType.IT, ArticleType.JAVASCRIPT],
     blocks: [
         {
             id: '1',

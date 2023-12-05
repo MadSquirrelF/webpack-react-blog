@@ -1,0 +1,71 @@
+.ArticleSortSelector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.sortTitle {
+    margin-right: 10px;
+}
+
+.sortWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.sortSelect {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    svg {
+        margin-right: 5px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .name {
+        font-size: 15px;
+    }
+}
+
+.active {
+    transition: background-color 0.1s ease-in-out;
+    outline: 2px solid var(--active-color-default);
+    background-color: var(--active-color-disabled);
+
+    svg {
+        fill: white;
+    }
+
+    span {
+        color: white;
+    }
+}
+
+.orderWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .orderSelect {
+        &:first-child {
+            margin-right: 10px;
+        }
+    }
+
+    .selected {
+        transition: background-color 0.1s ease-in-out;
+        outline: 2px solid var(--active-color-default);
+        background-color: var(--active-color-disabled);
+
+        svg {
+            fill: white;
+        }
+    }
+}

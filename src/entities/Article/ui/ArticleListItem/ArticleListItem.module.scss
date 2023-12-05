@@ -1,5 +1,6 @@
 .ArticleListItem {
     position: relative;
+    flex: none;
 
     .header {
         padding: 10px;
@@ -132,4 +133,8 @@
         flex: none;
         border-radius: 10px 10px 0 0;
     }
+}
+
+.short {
+    height: 300px !important;
 }

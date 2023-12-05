@@ -27,7 +27,7 @@ const article: Article = {
         username: 'Admin',
         avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
-    type: [ArticleType.IT, ArticleType.JS],
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',

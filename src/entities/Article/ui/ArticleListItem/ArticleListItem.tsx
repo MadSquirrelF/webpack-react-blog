@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, HTMLAttributes, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextSize } from 'shared/ui/Text/Text';
@@ -8,8 +8,8 @@ import { Card } from 'shared/ui/Card/Card';
 
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import styles from './ArticleListItem.module.scss';
 import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,
@@ -20,19 +20,14 @@ interface ArticleListItemProps {
   className?: string;
   article: Article;
   view: ArticleView;
+  isShort?: boolean;
+  target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticleListItem = memo(({ className, article, view }: ArticleListItemProps) => {
+export const ArticleListItem = memo(({
+    className, article, view, isShort, target,
+}: ArticleListItemProps) => {
     const { t } = useTranslation('article');
-
-    const navigate = useNavigate();
-
-    const onOpenArticle = useCallback(
-        () => {
-            navigate(RoutePath.articles_details + article.id);
-        },
-        [article.id, navigate],
-    );
 
     const types = (
         <div className={styles.typeWrapper}>
@@ -96,7 +91,10 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
                         </div>
 
                         <div className={styles.statWrapper}>
-                            <Button onClick={onOpenArticle} theme={ThemeButton.DEFAULT}>{t('Читать далее...')}</Button>
+                            <AppLink target={target} to={RoutePath.articles_details + article.id}>
+                                <Button theme={ThemeButton.DEFAULT}>{t('Читать далее...')}</Button>
+                            </AppLink>
+
                             {views}
                         </div>
 
@@ -107,25 +105,41 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
     }
 
     return (
-        <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>
-            <Card className={styles.card} onClick={onOpenArticle}>
+        <AppLink
+            target={target}
+            to={RoutePath.articles_details + article.id}
+            className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}
+        >
+            <Card className={classNames(styles.card, { [styles.short]: isShort })}>
                 <div className={styles.imageWrapper}>
                     <img src={article.img} alt={article.subtitle} title={article.title} className={styles.img} />
                 </div>
-                <div className={styles.infoWrapper}>
-                    <div className={styles.alignWrapper}>
-                        <Text title={article.title} className={styles.title} size={TextSize.XS} />
-                        {types}
-                        <Text text={article.subtitle} className={styles.subtitle} size={TextSize.XS} />
-                    </div>
+                {
+                    isShort ? (
+                        <div className={styles.infoWrapper}>
+                            <div className={styles.alignWrapper}>
+                                <Text title={article.title} className={styles.title} size={TextSize.XS} />
+                            </div>
+                        </div>
+                    ) : (
+                        <div className={styles.infoWrapper}>
+                            <div className={styles.alignWrapper}>
+                                <Text title={article.title} className={styles.title} size={TextSize.XS} />
 
-                    <div className={styles.statWrapper}>
-                        <Text title={article.createdAt} className={styles.createdAt} size={TextSize.XS} />
-                        {views}
-                    </div>
+                                {types}
+                                <Text text={article.subtitle} className={styles.subtitle} size={TextSize.XS} />
+                            </div>
 
-                </div>
+                            <div className={styles.statWrapper}>
+                                <Text title={article.createdAt} className={styles.createdAt} size={TextSize.XS} />
+                                {views}
+                            </div>
+
+                        </div>
+                    )
+                }
+
             </Card>
-        </div>
+        </AppLink>
     );
 });

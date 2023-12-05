@@ -28,6 +28,7 @@
     border-radius: 10px;
     box-shadow: var(--box-shadow-default);
     background-color: var(--bg-primary);
+    z-index: var(--collapsed-btn-z-index);
 
     &:active {
         transition: transform 0.1s ease-in-out;

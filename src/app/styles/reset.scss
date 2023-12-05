@@ -41,15 +41,16 @@ a {
     text-decoration: inherit;
 }
 
-html::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 5px;
+    height: 8px;
 }
 
-html::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: transparent;
 }
 
-html::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background: var(--color-medium-grey);
+    background: var(--active-color-default);
 }

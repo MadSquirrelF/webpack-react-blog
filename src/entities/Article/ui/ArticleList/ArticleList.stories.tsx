@@ -28,9 +28,6 @@ const article = {
     },
     type: [
         'IT',
-        'SCIENCE',
-        'POLITICS',
-        'ECONOMICS',
     ],
     blocks: [
         {
