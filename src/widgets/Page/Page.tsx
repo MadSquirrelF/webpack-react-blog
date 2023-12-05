@@ -39,14 +39,21 @@ export const Page = memo((props: PageProps) => {
         wrapperRef.current.scrollTop = scrollPosition;
     });
 
+    const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+        dispatch(ScrollSaveActions.setScrollPosition({
+            position: e.currentTarget.scrollTop,
+            path: pathname,
+        }));
+    }, 500);
+
     return (
         <section
             ref={wrapperRef}
             className={classNames(styles.Page, {}, [className])}
-
+            onScroll={onScroll}
         >
             {children}
-            <div ref={triggerRef} />
+            <div className={styles.trigger} ref={triggerRef} />
         </section>
     );
 });

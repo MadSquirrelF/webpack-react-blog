@@ -1,10 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { useSelector } from 'react-redux';
-import {
-    getArticlesPageInited,
-
-} from '../../selectors/articlesPageSelectors';
+import { getArticlesPageInited } from '../../selectors/articlesPageSelectors';
 
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../slice/articlesPageSlice';
@@ -17,7 +13,7 @@ export const initArticlesPage = createAsyncThunk<
         'articlesPage/initArticlesPage',
         async (_, thunkApi) => {
             const { getState, dispatch } = thunkApi;
-            const inited = useSelector(getArticlesPageInited);
+            const inited = getArticlesPageInited(getState());
 
             if (!inited) {
                 dispatch(articlesPageActions.initState());

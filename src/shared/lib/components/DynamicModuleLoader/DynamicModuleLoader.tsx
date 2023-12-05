@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
@@ -30,9 +31,9 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
         const mountedReducers = store.reducerManager.getReducerMap();
 
         Object.entries(reducers).forEach(([name, reducer]) => {
-            const mounted = mountedReducers[name as StateSchemaKey];
+            let mounted = mountedReducers[name as StateSchemaKey];
 
-            if (!mounted) {
+            if (mounted !== reducer) {
                 store.reducerManager.add(name as StateSchemaKey, reducer);
                 dispatch({ type: `@INIT ${name} reducer` });
             }

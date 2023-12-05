@@ -7,17 +7,15 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from 'widgets/Page/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
-import { Error } from 'shared/ui/Error/Error';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
-import styles from './ArticlesPage.module.scss';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import cls from './ArticlesPage.module.scss';
 import {
     getArticlesPageError,
-
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
+import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
 
 interface ArticlesPageProps {
     className?: string;
@@ -52,13 +50,9 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
                 onScrollEnd={onLoadNextPart}
-                className={classNames(styles.ArticlesPage, {}, [className])}
+                className={classNames(cls.ArticlesPage, {}, [className])}
             >
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
-
-                {error && (
-                    <Error error={t('Произошла непредвиденная ошибка')} />
-                )}
                 <ArticleList
                     isLoading={isLoading}
                     view={view}
