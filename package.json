@@ -8,7 +8,7 @@
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
     "build:dev": "webpack --env mode=development",
     "start:dev:server": "node ./json-server/index.js",
-    "build:prod": "webpack --env mode=production apiUrl=https://production-webpack-blog-server-76giusdhi-madsquirrelf.vercel.app",
+    "build:prod": "webpack --env mode=production apiUrl=https://production-webpack-blog-server.vercel.app",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
