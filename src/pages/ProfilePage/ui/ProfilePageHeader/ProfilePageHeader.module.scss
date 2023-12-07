@@ -2,6 +2,18 @@
     display: flex;
     margin-bottom: 20px;
 
+    .titleWrapper {
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 10px;
+            fill: var(--text-primary);
+            height: 30px;
+            width: 30px;
+        }
+    }
+
     .btnContainer {
         margin-left: auto;
         display: flex;

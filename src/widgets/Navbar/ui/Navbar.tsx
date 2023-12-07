@@ -7,6 +7,10 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import AddIcon from 'shared/assets/icons/add-icon.svg';
+import Logo from 'shared/assets/icons/logo.svg';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -36,6 +40,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(styles.Navbar, {}, [className])}>
+                <Logo className={styles.logo} />
+                <AppLink theme={AppLinkTheme.DEFAULT} className={styles.addArticleLink} to={RoutePath.articles_create}>
+                    <AddIcon />
+                    <span>{t('Добавить статью')}</span>
+                </AppLink>
                 <Button theme={ThemeButton.DECLINE} className={styles.linkLogout} onClick={onLogout} type="button">
                     {t('Выйти')}
                 </Button>

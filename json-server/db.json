@@ -47,6 +47,12 @@
       "userId": "1",
       "text": "Почему в мои рекомендациях та же самая статья, а?",
       "id": "Pp64r1W"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "React крутоооой!!!! ООООО",
+      "id": "fDXYTef"
     }
   ],
   "articles": [
@@ -429,21 +435,21 @@
       "username": "admin",
       "password": "admin",
       "role": "ADMIN",
-      "avatar": "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?w=826&t=st=1700173085~exp=1700173685~hmac=5d18d7cb3b79c038be94cda5f1198b117535b594849f530b5957b8589051c29f"
+      "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_34.png"
     },
     {
       "id": "2",
       "username": "Adam Denisov",
       "password": "123",
       "role": "USER",
-      "avatar": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=1380&t=st=1700173116~exp=1700173716~hmac=4dc5c6eb9c6928639faaee590a49b96e544ff5dc77a10e596d7a9e3946b7ad72"
+      "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png"
     },
     {
       "id": "3",
       "username": "Abbie Wilson",
       "password": "123",
       "role": "USER",
-      "avatar": "https://img.freepik.com/free-photo/one-young-woman-listening-music-with-headphones-generated-by-ai_188544-10009.jpg?t=st=1700173146~exp=1700176746~hmac=e6c11ab2aaabd9664265b94ec09672a964a8b056a22df1698606b690e7929de6&w=1380"
+      "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_31.png"
     },
     {
       "id": "4",
@@ -463,7 +469,7 @@
       "country": "Russia",
       "city": "Chelyabinsk",
       "username": "admin",
-      "avatar": "https://img.freepik.com/free-vector/mysterious-mafia-man-smoking-cigarette_52683-34828.jpg?w=826&t=st=1700173085~exp=1700173685~hmac=5d18d7cb3b79c038be94cda5f1198b117535b594849f530b5957b8589051c29f"
+      "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_34.png"
     },
     {
       "id": "2",
@@ -474,7 +480,7 @@
       "country": "USA",
       "city": "Miami",
       "username": "Adam Denisov",
-      "avatar": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=1380&t=st=1700173116~exp=1700173716~hmac=4dc5c6eb9c6928639faaee590a49b96e544ff5dc77a10e596d7a9e3946b7ad72"
+      "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png"
     },
     {
       "id": "3",
@@ -485,7 +491,18 @@
       "country": "Italy",
       "city": "Rome",
       "username": "Abbie Wilson",
-      "avatar": "https://img.freepik.com/free-photo/one-young-woman-listening-music-with-headphones-generated-by-ai_188544-10009.jpg?t=st=1700173146~exp=1700176746~hmac=e6c11ab2aaabd9664265b94ec09672a964a8b056a22df1698606b690e7929de6&w=1380"
+      "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_31.png"
+    },
+    {
+      "id": "4",
+      "firstname": "Tourmaline",
+      "lastname": "Core",
+      "age": 22,
+      "currency": "EUR",
+      "country": "Italy",
+      "city": "Rome",
+      "username": "TourmalineCore",
+      "avatar": "https://sun9-74.userapi.com/impg/rDNpAVdecXSKf57ngdP96WmhYnU3o2nbxkUJxQ/GPbX3FHYybs.jpg?size=1300x1300&quality=95&sign=77a223ae095c9aac66ccf33f1b21cb8d&type=album"
     }
   ]
 }

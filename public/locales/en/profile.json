@@ -1,5 +1,5 @@
 {
-  "Профиль": "Profile" ,
+  "Настройки профиля": "Profile preferences" ,
   "Редактировать": "Edit",
   "Ваше имя": "Your firstname",
   "Ваша фамилия": "Your lastname",
@@ -13,6 +13,8 @@
   "Фамилия": "Lastname",
   "Возраст": "Age",
   "Город": "City",
+  "Сменить": "Change",
+  "Удалить": "Remove",
   "Ошибка при загрузке профиля": "Error on loading profile page",
   "Отменить": "Cancel",
   "Сохранить": "Save",

@@ -3,6 +3,7 @@
     height: var(--navbar-height);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 20px;
     background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
@@ -16,7 +17,25 @@
     }
 
     .linkLogout {
-        margin-left: auto;
         padding: 8px;
+    }
+}
+
+.logo {
+    height: 50px;
+    width: 200px;
+}
+
+.addArticleLink {
+    display: flex;
+
+    svg {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+
+        path: {
+            fill: white;
+        }
     }
 }

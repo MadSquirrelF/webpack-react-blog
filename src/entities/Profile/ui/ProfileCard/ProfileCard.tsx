@@ -8,6 +8,10 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import defaultAvatar from 'shared/assets/images/defaultAvatar.jpg';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { CountriesSelect, Country } from 'entities/Countries';
+import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import ImageIcon from 'shared/assets/icons/image-icon.svg';
+import TrashIcon from 'shared/assets/icons/trash-icon.svg';
 import { Profile } from '../../model/types/profile';
 import styles from './ProfileCard.module.scss';
 
@@ -68,13 +72,29 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     return (
         <div className={classNames(styles.ProfileCard, mods, [className])}>
+            <ProfilePageHeader />
             <div className={styles.data}>
                 <div className={styles.top}>
                     {
                         data?.avatar ? (
-                            <Avatar src={data.avatar} alt="user avatar" size={150} />
-                        ) : <Avatar src={defaultAvatar} alt="default avatar" size={150} />
+                            <Avatar className={styles.avatar} src={data.avatar} alt="user avatar" size={200} />
+                        ) : <Avatar className={styles.avatar} src={defaultAvatar} alt="default avatar" size={200} />
                     }
+
+                    <div className={styles.btnWrapper}>
+                        <Button theme={ThemeButton.OUTLINE} className={styles.avatarSettingBtn}>
+                            <ImageIcon />
+                            <span>{t('Сменить')}</span>
+                        </Button>
+                        <Button theme={ThemeButton.OUTLINE} className={styles.avatarSettingBtn}>
+                            <TrashIcon />
+                            <span>{t('Удалить')}</span>
+                        </Button>
+                    </div>
+
+                </div>
+
+                <div className={styles.flexBox}>
                     <div className={styles.InputContainer}>
                         <Input
                             value={data?.firstname}
@@ -111,41 +131,38 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
                     </div>
 
-                </div>
+                    <div className={styles.InputContainer}>
+                        <CurrencySelect
+                            value={data?.currency}
+                            onChange={onChangeCurrency}
+                            readonly={readonly}
+                            className={styles.input}
+                        />
+                        <CountriesSelect
+                            value={data?.country}
+                            onChange={onChangeCountries}
+                            readonly={readonly}
+                            className={styles.input}
+                        />
 
-                <div className={styles.flexBox}>
-                    <CurrencySelect
-                        value={data?.currency}
-                        onChange={onChangeCurrency}
-                        readonly={readonly}
-                        className={styles.input}
-                    />
-                    <CountriesSelect
-                        value={data?.country}
-                        onChange={onChangeCountries}
-                        readonly={readonly}
-                        className={styles.input}
-                    />
-                </div>
+                        <Input
+                            value={data?.avatar}
+                            placeholder={t('Аватар')}
+                            label={t('Ваш аватар')}
+                            className={styles.input}
+                            readonly={readonly}
+                            onChange={onChangeAvatar}
+                        />
 
-                <div className={styles.flexBox}>
-                    <Input
-                        value={data?.avatar}
-                        placeholder={t('Аватар')}
-                        label={t('Ваш аватар')}
-                        className={styles.input}
-                        readonly={readonly}
-                        onChange={onChangeAvatar}
-                    />
-
-                    <Input
-                        value={data?.city}
-                        placeholder={t('Ваш город')}
-                        label={t('Город')}
-                        className={styles.input}
-                        readonly={readonly}
-                        onChange={onChangeCity}
-                    />
+                        <Input
+                            value={data?.city}
+                            placeholder={t('Ваш город')}
+                            label={t('Город')}
+                            className={styles.input}
+                            readonly={readonly}
+                            onChange={onChangeCity}
+                        />
+                    </div>
                 </div>
 
             </div>

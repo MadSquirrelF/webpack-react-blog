@@ -9,6 +9,7 @@ import {
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
+import ProfileIcon from 'shared/assets/icons/profile-icon.svg';
 import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -41,8 +42,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
     return (
         <div className={classNames(styles.ProfilePageHeader, {}, [className])}>
-
-            <Text title={t('Профиль')} />
+            <div className={styles.titleWrapper}>
+                <ProfileIcon />
+                <Text title={t('Настройки профиля')} />
+            </div>
 
             {canEdit && (
                 <div className={styles.btnWrapper}>
