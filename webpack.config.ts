@@ -1,6 +1,5 @@
-import path from 'path';
-
 import webpack from 'webpack';
+import path from 'path';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildEnv, BuildPaths } from './config/build/types/config';
 
@@ -13,10 +12,12 @@ export default (env: BuildEnv) => {
         locales: path.resolve(__dirname, 'public', 'locales'),
         buildLocales: path.resolve(__dirname, 'build', 'locales'),
     };
+
     const mode = env.mode || 'development';
-    const isDev = mode === 'development';
     const PORT = env.port || 3000;
     const apiUrl = env.apiUrl || 'http://localhost:8000';
+
+    const isDev = mode === 'development';
 
     const config: webpack.Configuration = buildWebpackConfig({
         mode,
