@@ -13,7 +13,11 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: ['react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+        'ulbi-tv-plugin'],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -35,7 +39,14 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to'],
+            ignoreAttribute: ['data-testid', 'to', 'className',
+                'gap',
+                'justify',
+                'align',
+                'direction',
+                'role', 'as', 'leave',
+                'leaveFrom',
+                'leaveTo'],
         }],
         'max-len': ['error', {
             ignoreComments: true,
@@ -47,6 +58,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'ulbi-tv-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

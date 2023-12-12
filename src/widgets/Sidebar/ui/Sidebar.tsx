@@ -6,6 +6,7 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import ArrowLeftIcon from 'shared/assets/icons/arrow-left.svg';
 import ArrowRightIcon from 'shared/assets/icons/arrow-right.svg';
 import { useSelector } from 'react-redux';
+import { VStack } from 'shared/ui/Stack';
 import { Button, SizeButton, ThemeButton } from '../../../shared/ui/Button/Button';
 import styles from './Sidebar.module.scss';
 import { SidebarItem } from './SidebarItem/SidebarItem';
@@ -49,9 +50,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 {collapsed ? <ArrowRightIcon /> : <ArrowLeftIcon />}
             </Button>
 
-            <ul className={styles.items}>
+            <VStack role="navigation" align={collapsed ? 'center' : 'start'} max gap="10">
                 {itemsList}
-            </ul>
+            </VStack>
+
             <div className={styles.switchers}>
                 <LangSwitcher className={styles.lang} />
                 <ThemeSwitcher short={collapsed} />

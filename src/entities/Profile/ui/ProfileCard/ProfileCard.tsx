@@ -12,6 +12,7 @@ import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/Profil
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import ImageIcon from 'shared/assets/icons/image-icon.svg';
 import TrashIcon from 'shared/assets/icons/trash-icon.svg';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Profile } from '../../model/types/profile';
 import styles from './ProfileCard.module.scss';
 
@@ -52,9 +53,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(styles.ProfileCard, { [styles.loading]: true }, [className])}>
+            <VStack
+                justify="center"
+                max
+                className={classNames(styles.ProfileCard, { [styles.loading]: true }, [className])}
+            >
                 <Loader theme={ThemeLoader.MAIN_LOADER} />
-            </div>
+            </VStack>
         );
     }
 
@@ -72,100 +77,103 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     return (
         <div className={classNames(styles.ProfileCard, mods, [className])}>
-            <ProfilePageHeader />
-            <div className={styles.data}>
-                <div className={styles.top}>
-                    {
-                        data?.avatar ? (
-                            <Avatar className={styles.avatar} src={data.avatar} alt="user avatar" size={200} />
-                        ) : <Avatar className={styles.avatar} src={defaultAvatar} alt="default avatar" size={200} />
-                    }
+            <VStack max gap="16">
+                <ProfilePageHeader />
+                <VStack gap="16" align="start" max>
+                    <HStack gap="32">
+                        {
+                            data?.avatar ? (
+                                <Avatar className={styles.avatar} src={data.avatar} alt="user avatar" size={200} />
+                            ) : <Avatar className={styles.avatar} src={defaultAvatar} alt="default avatar" size={200} />
+                        }
 
-                    <div className={styles.btnWrapper}>
-                        <Button theme={ThemeButton.OUTLINE} className={styles.avatarSettingBtn}>
-                            <ImageIcon />
-                            <span>{t('Сменить')}</span>
-                        </Button>
-                        <Button theme={ThemeButton.OUTLINE} className={styles.avatarSettingBtn}>
-                            <TrashIcon />
-                            <span>{t('Удалить')}</span>
-                        </Button>
-                    </div>
+                        <VStack gap="4">
+                            <Button theme={ThemeButton.OUTLINE} className={styles.avatarSettingBtn}>
+                                <ImageIcon />
+                                <span>{t('Сменить')}</span>
+                            </Button>
+                            <Button theme={ThemeButton.OUTLINE} className={styles.avatarSettingBtn}>
+                                <TrashIcon />
+                                <span>{t('Удалить')}</span>
+                            </Button>
+                        </VStack>
 
-                </div>
+                    </HStack>
 
-                <div className={styles.flexBox}>
-                    <div className={styles.InputContainer}>
-                        <Input
-                            value={data?.firstname}
-                            placeholder={t('Ваше имя')}
-                            label={t('Имя')}
-                            onChange={onChangeFirstname}
-                            readonly={readonly}
-                            className={styles.input}
-                        />
-                        <Input
-                            value={data?.lastname}
-                            placeholder={t('Ваша фамилия')}
-                            label={t('Фамилия')}
-                            className={styles.input}
-                            readonly={readonly}
-                            onChange={onChangeLastname}
-                        />
-                        <Input
-                            value={data?.username}
-                            placeholder={t('Ваше имя пользователя')}
-                            label={t('Имя пользователя')}
-                            className={styles.input}
-                            readonly={readonly}
-                            onChange={onChangeUsername}
-                        />
-                        <Input
-                            value={data?.age}
-                            placeholder={t('Ваш возраст')}
-                            label={t('Возраст')}
-                            className={styles.input}
-                            readonly={readonly}
-                            onChange={onChangeAge}
-                        />
+                    <HStack gap="32" max>
+                        <VStack max>
+                            <Input
+                                value={data?.firstname}
+                                placeholder={t('Ваше имя')}
+                                label={t('Имя')}
+                                onChange={onChangeFirstname}
+                                readonly={readonly}
+                                className={styles.input}
+                            />
+                            <Input
+                                value={data?.lastname}
+                                placeholder={t('Ваша фамилия')}
+                                label={t('Фамилия')}
+                                className={styles.input}
+                                readonly={readonly}
+                                onChange={onChangeLastname}
+                            />
+                            <Input
+                                value={data?.username}
+                                placeholder={t('Ваше имя пользователя')}
+                                label={t('Имя пользователя')}
+                                className={styles.input}
+                                readonly={readonly}
+                                onChange={onChangeUsername}
+                            />
+                            <Input
+                                value={data?.age}
+                                placeholder={t('Ваш возраст')}
+                                label={t('Возраст')}
+                                className={styles.input}
+                                readonly={readonly}
+                                onChange={onChangeAge}
+                            />
 
-                    </div>
+                        </VStack>
 
-                    <div className={styles.InputContainer}>
-                        <CurrencySelect
-                            value={data?.currency}
-                            onChange={onChangeCurrency}
-                            readonly={readonly}
-                            className={styles.input}
-                        />
-                        <CountriesSelect
-                            value={data?.country}
-                            onChange={onChangeCountries}
-                            readonly={readonly}
-                            className={styles.input}
-                        />
+                        <VStack max>
+                            <CurrencySelect
+                                value={data?.currency}
+                                onChange={onChangeCurrency}
+                                readonly={readonly}
+                                className={styles.select}
+                            />
+                            <CountriesSelect
+                                value={data?.country}
+                                onChange={onChangeCountries}
+                                readonly={readonly}
+                                className={styles.select}
+                            />
 
-                        <Input
-                            value={data?.avatar}
-                            placeholder={t('Аватар')}
-                            label={t('Ваш аватар')}
-                            className={styles.input}
-                            readonly={readonly}
-                            onChange={onChangeAvatar}
-                        />
+                            <Input
+                                value={data?.avatar}
+                                placeholder={t('Аватар')}
+                                label={t('Ваш аватар')}
+                                className={styles.input}
+                                readonly={readonly}
+                                onChange={onChangeAvatar}
+                            />
 
-                        <Input
-                            value={data?.city}
-                            placeholder={t('Ваш город')}
-                            label={t('Город')}
-                            className={styles.input}
-                            readonly={readonly}
-                            onChange={onChangeCity}
-                        />
-                    </div>
-                </div>
+                            <Input
+                                value={data?.city}
+                                placeholder={t('Ваш город')}
+                                label={t('Город')}
+                                className={styles.input}
+                                readonly={readonly}
+                                onChange={onChangeCity}
+                            />
+                        </VStack>
+                    </HStack>
 
-            </div>
+                </VStack>
+            </VStack>
+
         </div>
     );
 };

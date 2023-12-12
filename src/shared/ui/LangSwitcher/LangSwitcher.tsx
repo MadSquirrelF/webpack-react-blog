@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { memo } from 'react';
 import Rus from 'shared/assets/icons/rus-icon.svg';
 import Brit from 'shared/assets/icons/britain-icon.svg';
+import { Button, ThemeButton } from '../Button/Button';
 import styles from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {

@@ -5,9 +5,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import LightIcon from 'shared/assets/icons/sun-icon.svg';
 import DarkIcon from 'shared/assets/icons/moon-icon.svg';
 import NightIcon from 'shared/assets/icons/star-icon.svg';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { Button, ThemeButton } from '../../Button/Button';
 import styles from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {

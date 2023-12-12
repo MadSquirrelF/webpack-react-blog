@@ -4,6 +4,7 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
+import { HStack } from 'shared/ui/Stack';
 import styles from './SidebarItem.module.scss';
 import { SidebarItemType } from '../../model/types/sidebar';
 
@@ -22,7 +23,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     }
 
     return (
-        <li className={classNames(styles.item, { [styles.collapsed]: collapsed })}>
+        <HStack max gap="10" className={classNames(styles.item, { [styles.collapsed]: collapsed })}>
             <AppLink
                 to={item.path}
                 className={styles.link}
@@ -33,7 +34,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
                 </p>
             </AppLink>
 
-        </li>
+        </HStack>
 
     );
 });

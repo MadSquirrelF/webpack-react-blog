@@ -1488,6 +1488,13 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@headlessui/react@^1.7.17":
+  version "1.7.17"
+  resolved "https://registry.npmjs.org/@headlessui/react/-/react-1.7.17.tgz"
+  integrity sha512-4am+tzvkqDSSgiwrsEpGWqgGo9dz8qU5M3znCkC4PgkpY4HcCZzEDEvozltGGGHIKl9jbXbZPSH5TWn4sWJdow==
+  dependencies:
+    client-only "^0.0.1"
+
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.11"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.11.tgz"
@@ -5614,6 +5621,11 @@ cli-truncate@^2.1.0:
     slice-ansi "^3.0.0"
     string-width "^4.2.0"
 
+client-only@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
+  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
+
 cliui@^7.0.2:
   version "7.0.4"
   resolved "https://registry.npmjs.org/cliui/-/cliui-7.0.4.tgz"
@@ -7159,6 +7171,13 @@ eslint-plugin-react@^7.29.2, eslint-plugin-react@^7.32.2:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.8"
 
+eslint-plugin-shabanov-art-plugin@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/eslint-plugin-shabanov-art-plugin/-/eslint-plugin-shabanov-art-plugin-0.0.3.tgz"
+  integrity sha512-XJxjEHBnDRC1a+heBys4B4wQCKp+pAeP5tsGtmwzfExJFORjWva7zLf2kCracZDtYog/Gli/3tzfXe9KOexi2w==
+  dependencies:
+    requireindex "^1.2.0"
+
 eslint-plugin-storybook@^0.6.11:
   version "0.6.11"
   resolved "https://registry.npmjs.org/eslint-plugin-storybook/-/eslint-plugin-storybook-0.6.11.tgz"
@@ -7168,6 +7187,14 @@ eslint-plugin-storybook@^0.6.11:
     "@typescript-eslint/utils" "^5.45.0"
     requireindex "^1.1.0"
     ts-dedent "^2.2.0"
+
+eslint-plugin-ulbi-tv-plugin@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.npmjs.org/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.10.tgz"
+  integrity sha512-/PGwMEzTH9R6rKBSCh1/DGMmf3Yp+zGnlu8sXFmbWdwaeO3LIqL3nj5baABa3cD0ooRm8sMB3Ok2SsNXI3Xabw==
+  dependencies:
+    micromatch "^4.0.5"
+    requireindex "^1.2.0"
 
 eslint-scope@^4.0.3:
   version "4.0.3"
@@ -12887,6 +12914,11 @@ requireindex@^1.1.0, requireindex@~1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/requireindex/-/requireindex-1.1.0.tgz"
   integrity sha512-LBnkqsDE7BZKvqylbmn7lTIVdpx4K/QCduRATpO5R+wtPmky/a8pN1bO2D6wXppn1497AJF9mNjqAXr6bdl9jg==
+
+requireindex@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/requireindex/-/requireindex-1.2.0.tgz"
+  integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
 
 requires-port@^1.0.0:
   version "1.0.0"

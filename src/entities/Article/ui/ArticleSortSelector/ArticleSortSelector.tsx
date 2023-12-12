@@ -9,7 +9,7 @@ import SortViewIcon from 'shared/assets/icons/sort-view-icon.svg';
 import SortTitleIcon from 'shared/assets/icons/sort-title-icon.svg';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
-import { ArticleOrder, ArticleSortField } from 'entities/Article/model/types/article';
+import { ArticleOrder, ArticleSortField } from '../../model/types/article';
 import styles from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {

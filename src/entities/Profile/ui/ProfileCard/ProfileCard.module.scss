@@ -10,14 +10,12 @@
     outline: 1px solid var(--active-color-default);
 }
 
-.avatar {
-    margin-right: 50px;
-    box-shadow: var(--box-shadow-default);
+.select {
+    width: 100%;
 }
 
-.btnWrapper {
-    display: flex;
-    flex-direction: column;
+.avatar {
+    box-shadow: var(--box-shadow-default);
 }
 
 .avatarSettingBtn {
@@ -36,31 +34,6 @@
     }
 }
 
-.top {
-    display: flex;
-    align-items: center;
-}
-
-.InputContainer {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 30%;
-
-    &:first-child {
-        margin-right: 50px;
-    }
-}
-
-.flexBox {
-    display: flex;
-    align-items: center;
-}
-
 .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
+    height: 500px;
 }

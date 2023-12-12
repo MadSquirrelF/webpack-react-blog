@@ -1,0 +1,119 @@
+.ListBox {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.item {
+    svg {
+        opacity: 0;
+        width: 20px;
+        height: 20px;
+        fill: var(--active-color-default);
+    }
+
+    padding: 20px 25px;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border-primary);
+
+    &:hover {
+        background-color: var(--bg-secondary);
+    }
+
+    &:last-child {
+        border-bottom: none;
+        border-radius: 0 0 10px 10px;
+    }
+
+    &:first-child {
+        border-radius: 10px 10px 0 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            border-top: 1px solid var(--border-primary);
+            border-left: 1px solid var(--border-primary);
+            background-color: var(--bg-primary);
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+        }
+
+        &:hover {
+            &::before {
+                background-color: var(--bg-secondary);
+            }
+        }
+    }
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.selected {
+    svg {
+        opacity: 1;
+    }
+}
+
+.trigger {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    color: var(--text-primary);
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: var(--box-shadow-default);
+    background-color: var(--bg-primary);
+
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--text-primary);
+    }
+
+    &:active {
+        svg {
+            transition: transform 0.1s ease-in-out;
+            transform: translateY(1px);
+        }
+    }
+
+    &:disabled {
+        svg {
+            display: none;
+        }
+
+        &:active {
+            svg {
+                transform: none;
+            }
+        }
+    }
+}
+
+.options {
+    width: 100%;
+    z-index: 8;
+    background-color: var(--bg-primary);
+    position: absolute;
+    box-shadow: var(--box-shadow-default);
+    border-radius: 10px;
+    outline: 1px solid var(--border-primary);
+    margin-top: 15px;
+}

@@ -11,6 +11,7 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AddIcon from 'shared/assets/icons/add-icon.svg';
 import Logo from 'shared/assets/icons/logo.svg';
+import { HStack } from 'shared/ui/Stack';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -41,7 +42,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         return (
             <header className={classNames(styles.Navbar, {}, [className])}>
                 <Logo className={styles.logo} />
-                <AppLink theme={AppLinkTheme.DEFAULT} className={styles.addArticleLink} to={RoutePath.articles_create}>
+                <AppLink
+                    theme={AppLinkTheme.DEFAULT}
+                    className={styles.addArticleLink}
+                    to={RoutePath.articles_create}
+                >
                     <AddIcon />
                     <span>{t('Добавить статью')}</span>
                 </AppLink>
@@ -54,6 +59,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     return (
         <header className={classNames(styles.Navbar, {}, [className])}>
+            <Logo className={styles.logo} />
             <Button theme={ThemeButton.DEFAULT} className={styles.links} onClick={onShowModal} type="button">
                 {t('Войти')}
             </Button>

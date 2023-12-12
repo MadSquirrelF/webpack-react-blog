@@ -9,7 +9,8 @@ import EditIcon from 'shared/assets/icons/edit-icon.svg';
 import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails';
-import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article';
+import { HStack } from 'shared/ui/Stack';
+import { getCanEditArticle } from '../../model/selectors/article';
 import styles from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {
@@ -40,7 +41,7 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
     );
 
     return (
-        <div className={classNames(styles.ArticleDetailsPageHeader, {}, [className])}>
+        <HStack max justify="between" gap="10" className={classNames(styles.ArticleDetailsPageHeader, {}, [className])}>
             <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>{t('Назад к списку')}</Button>
 
             {
@@ -51,6 +52,6 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
                 )
             }
 
-        </div>
+        </HStack>
     );
 });
