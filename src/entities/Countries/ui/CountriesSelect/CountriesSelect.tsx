@@ -34,6 +34,7 @@ export const CountriesSelect = memo(({
             label={t('Старана')}
             items={countriesOptions}
             onChange={onChangeHandler}
+            direction="top right"
         />
     );
 });

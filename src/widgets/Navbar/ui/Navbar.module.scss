@@ -7,23 +7,15 @@
     padding: 20px;
     background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
-
-    .links {
-        margin-left: auto;
-
-        .mainLink {
-            margin-right: 15px;
-        }
-    }
-
-    .linkLogout {
-        padding: 8px;
-    }
 }
 
 .logo {
     height: 50px;
     width: 200px;
+}
+
+.avatar {
+    box-shadow: var(--box-shadow-default);
 }
 
 .addArticleLink {

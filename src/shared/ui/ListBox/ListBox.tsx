@@ -1,8 +1,9 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import UpDownIcon from 'shared/assets/icons/up-down-icon.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import SelectedIcon from 'shared/assets/icons/selected-icon.svg';
+import { DropdownDirection } from 'shared/types/ui';
 import styles from './ListBox.module.scss';
 
 export interface ListBoxItem {
@@ -19,12 +20,24 @@ interface ListBoxProps {
   onChange: (value: string) => void;
   readonly?: boolean;
   label?: string;
+  direction?: DropdownDirection;
 }
+
+const mapDirectionClass: Record<DropdownDirection, string> = {
+    'bottom left': styles.optionsBottomLeft,
+    'bottom right': styles.optionsBottomRight,
+    'top right': styles.optionsTopRight,
+    'top left': styles.optionsTopLeft,
+};
 
 export function ListBox(props: ListBoxProps) {
     const {
-        items, className, value, label, defaultValue, readonly, onChange,
+        items, className, direction = 'bottom right', value, label, defaultValue, readonly, onChange,
     } = props;
+
+    const optionsClasses = [
+        mapDirectionClass[direction],
+    ];
 
     return (
         <HListBox
@@ -42,7 +55,7 @@ export function ListBox(props: ListBoxProps) {
                 {' '}
                 <UpDownIcon />
             </HListBox.Button>
-            <HListBox.Options className={styles.options}>
+            <HListBox.Options className={classNames(styles.options, {}, optionsClasses)}>
                 {items.map((item) => (
                     <HListBox.Option
                         key={item.value}

@@ -7,11 +7,14 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AddIcon from 'shared/assets/icons/add-icon.svg';
 import Logo from 'shared/assets/icons/logo.svg';
+import LogoutIcon from 'shared/assets/icons/logout-icon.svg';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { HStack } from 'shared/ui/Stack';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import ProfileIcon from 'shared/assets/icons/profile-icon.svg';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -42,17 +45,41 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         return (
             <header className={classNames(styles.Navbar, {}, [className])}>
                 <Logo className={styles.logo} />
-                <AppLink
-                    theme={AppLinkTheme.DEFAULT}
-                    className={styles.addArticleLink}
-                    to={RoutePath.articles_create}
-                >
-                    <AddIcon />
-                    <span>{t('Добавить статью')}</span>
-                </AppLink>
-                <Button theme={ThemeButton.DECLINE} className={styles.linkLogout} onClick={onLogout} type="button">
-                    {t('Выйти')}
-                </Button>
+                <Dropdown
+                    direction="bottom left"
+                    className={styles.dropdown}
+                    items={[
+                        {
+                            content: (
+                                <HStack max justify="start" gap="10">
+                                    <ProfileIcon />
+                                    <span>{t('Настройки пользователя')}</span>
+                                </HStack>
+                            ),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        {
+                            content: (
+                                <HStack max justify="start" gap="10">
+                                    <AddIcon />
+                                    <span>{t('Добавить статью')}</span>
+                                </HStack>
+                            ),
+                            href: RoutePath.articles_create,
+                        },
+                        {
+                            content: (
+                                <HStack max justify="start" gap="10">
+                                    <LogoutIcon />
+                                    <span>{t('Выйти')}</span>
+                                </HStack>
+
+                            ),
+                            onClick: onLogout,
+                        },
+                    ]}
+                    trigger={<Avatar size={50} className={styles.avatar} src={authData.avatar} />}
+                />
             </header>
         );
     }

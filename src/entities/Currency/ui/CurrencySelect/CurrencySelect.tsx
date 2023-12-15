@@ -34,6 +34,7 @@ export const CurrencySelect = memo(({
             className={className}
             label={t('Валюта')}
             onChange={onChangeHandler}
+            direction="top right"
         />
     );
 });
