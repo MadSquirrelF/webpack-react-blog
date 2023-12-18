@@ -12,11 +12,11 @@ interface ArticleTypeTabsProps {
 }
 
 export const ArticleTypeTabs = memo(({ className, value, onChangeType }: ArticleTypeTabsProps) => {
-    const { t } = useTranslation('articles');
+    const { t } = useTranslation('article');
 
     const typeTabs = useMemo(() => Object.values(ArticleType).reduce((acc: TabItem[], cur) => ([
         ...acc,
-        { value: cur, content: t(cur, { ns: 'articles' }) },
+        { value: cur, content: t(cur, { ns: 'article' }) },
     ]), []), [t]);
 
     const onTabClick = useCallback((tab: TabItem) => {

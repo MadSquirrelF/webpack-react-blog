@@ -8,11 +8,13 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import defaultAvatar from 'shared/assets/images/defaultAvatar.jpg';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { CountriesSelect, Country } from 'entities/Countries';
-import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import ImageIcon from 'shared/assets/icons/image-icon.svg';
 import TrashIcon from 'shared/assets/icons/trash-icon.svg';
 import { HStack, VStack } from 'shared/ui/Stack';
+import {
+    EditableProfileCardHeader,
+} from 'features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader';
 import { Profile } from '../../model/types/profile';
 import styles from './ProfileCard.module.scss';
 
@@ -78,7 +80,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <div className={classNames(styles.ProfileCard, mods, [className])}>
             <VStack max gap="16">
-                <ProfilePageHeader />
+                <EditableProfileCardHeader />
                 <VStack gap="16" align="start" max>
                     <HStack gap="32">
                         {
