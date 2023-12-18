@@ -434,28 +434,28 @@
       "id": "1",
       "username": "admin",
       "password": "admin",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_34.png"
     },
     {
       "id": "2",
       "username": "Adam Denisov",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_23.png"
     },
     {
       "id": "3",
       "username": "Abbie Wilson",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_31.png"
     },
     {
       "id": "4",
       "username": "TourmalineCore",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://sun9-74.userapi.com/impg/rDNpAVdecXSKf57ngdP96WmhYnU3o2nbxkUJxQ/GPbX3FHYybs.jpg?size=1300x1300&quality=95&sign=77a223ae095c9aac66ccf33f1b21cb8d&type=album"
     }
   ],

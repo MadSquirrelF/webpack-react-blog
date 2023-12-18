@@ -6,7 +6,7 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isUserAdmin, userActions } from 'entities/User';
 import AddIcon from 'shared/assets/icons/add-icon.svg';
 import Logo from 'shared/assets/icons/logo.svg';
 import LogoutIcon from 'shared/assets/icons/logout-icon.svg';
@@ -15,6 +15,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { HStack } from 'shared/ui/Stack';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import ProfileIcon from 'shared/assets/icons/profile-icon.svg';
+import AdminIcon from 'shared/assets/icons/admin-icon.svg';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -26,6 +27,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
+    const isAdmin = useSelector(isUserAdmin);
+
+    console.log(isAdmin);
 
     const [isAuthModal, setIsAuthModal] = useState(false);
 
@@ -49,6 +53,15 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     direction="bottom left"
                     className={styles.dropdown}
                     items={[
+                        ...(isAdmin ? [{
+                            content: (
+                                <HStack max justify="start" gap="10">
+                                    <AdminIcon />
+                                    <span>{t('Панель администратора')}</span>
+                                </HStack>
+                            ),
+                            href: RoutePath.admin_panel,
+                        }] : []),
                         {
                             content: (
                                 <HStack max justify="start" gap="10">
