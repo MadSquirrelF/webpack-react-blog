@@ -6,14 +6,19 @@ import styles from './Error.module.scss';
 interface ErrorProps {
   className?: string;
   error: string;
+  'data-testid'?: string;
 }
 
 export const Error = (props: ErrorProps) => {
     const { t } = useTranslation();
-    const { className, error } = props;
+    const {
+        className,
+        error,
+        'data-testid': dataTestId = 'Error',
+    } = props;
     return (
         <div className={classNames(styles.error, {}, [className])}>
-            <p className={styles.title}>{error}</p>
+            <p data-testid={`${dataTestId}.Text`} className={styles.title}>{error}</p>
         </div>
     );
 };

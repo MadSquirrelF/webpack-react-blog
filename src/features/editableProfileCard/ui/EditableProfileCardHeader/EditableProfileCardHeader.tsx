@@ -53,15 +53,33 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
             {canEdit && (
                 <HStack className={styles.btnWrapper}>
                     {readonly ? (
-                        <Button theme={ThemeButton.DEFAULT} className={styles.editBtn} onClick={onEdit}>
+                        <Button
+                            theme={ThemeButton.DEFAULT}
+                            className={styles.editBtn}
+                            onClick={onEdit}
+                            data-testid="EditableProfileCardHeader.EditButton"
+                        >
                             {t('Редактировать')}
                         </Button>
                     ) : (
-                        <HStack gap="10" className={styles.btnContainer}>
-                            <Button theme={ThemeButton.DECLINE} className={styles.cancelBtn} onClick={onCancelEdit}>
+                        <HStack
+                            gap="10"
+                            className={styles.btnContainer}
+                        >
+                            <Button
+                                theme={ThemeButton.DECLINE}
+                                className={styles.cancelBtn}
+                                onClick={onCancelEdit}
+                                data-testid="EditableProfileCardHeader.CancelButton"
+                            >
                                 {t('Отменить')}
                             </Button>
-                            <Button theme={ThemeButton.DEFAULT} className={styles.saveBtn} onClick={onSaveEdit}>
+                            <Button
+                                theme={ThemeButton.DEFAULT}
+                                className={styles.saveBtn}
+                                onClick={onSaveEdit}
+                                data-testid="EditableProfileCardHeader.SaveButton"
+                            >
                                 {t('Сохранить')}
                             </Button>
                         </HStack>
